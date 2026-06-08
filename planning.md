@@ -150,8 +150,16 @@ The pipeline starts by collecting source documents and converting them into clea
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
-**Milestone 3 — Ingestion and chunking:**
+I will use ChatGPT or Claude as coding assistants, but I will give them specific sections of this plan instead of asking for generic help. For each milestone, I will provide the relevant requirements, ask for a focused implementation, and then verify the result against this planning document.
 
-**Milestone 4 — Embedding and retrieval:**
+**Milestone 3 - Ingestion and chunking:**
 
-**Milestone 5 — Generation and interface:**
+I will give the AI my Domain, Documents, and Chunking Strategy sections, plus the requirement that chunks should be around 150-250 tokens with 30-50 tokens of overlap. I expect it to produce functions that load documents from the `documents/` folder, clean the text, split it into chunks, and preserve metadata such as source name, file path, and chunk number. I will verify the output by printing several sample chunks and checking that they are readable, close to the target size, and still include enough context to understand the passage.
+
+**Milestone 4 - Embedding and retrieval:**
+
+I will give the AI my Retrieval Approach section and clearly state that I cannot choose or replace the embedding model. I expect it to produce code that embeds each chunk using the starter environment's provided model, stores the embeddings with metadata, embeds the user question, and retrieves the top 5 most relevant chunks. I will verify this by running my evaluation questions and checking whether the retrieved chunks contain evidence needed to answer each question.
+
+**Milestone 5 - Generation and interface:**
+
+I will give the AI my Architecture, Retrieval Approach, and Evaluation Plan sections, especially the rule that answers must be grounded only in retrieved chunks. I expect it to produce code that takes a user question, retrieves relevant chunks, formats them as context for the language model, and returns an answer with source attribution. I will verify the output by testing the five evaluation questions, checking whether each answer is supported by the retrieved evidence, and recording any failure cases in the final report.
