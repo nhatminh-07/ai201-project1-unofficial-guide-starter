@@ -48,7 +48,7 @@ This knowledge is valuable because it records practical, place-based ways that c
 | 22 | Frontiers in Sustainable Food Systems — *Strengthening the economic sustainability of community seed banks*, De Falcis et al. (2022) | Covers how community seed banks conserve agrobiodiversity and enable seed/food sovereignty in low-income countries | [10.3389/fsufs.2022.803195](https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2022.803195/full) |
 | 23 | FAO — State of the World's Forests 2024 | Flagship biennial report on community forest governance, indigenous land tenure, and forest ecosystem service trends | [openknowledge.fao.org](https://openknowledge.fao.org/) |
 | 24 | Nature Climate Change — *Community forest governance and synergies among carbon, biodiversity and livelihoods*, Fischer et al. (2023) | Quantitative study showing community-governed forests produce co-benefits across carbon, biodiversity, and livelihoods | [10.1038/s41558-023-01863-6](https://www.nature.com/articles/s41558-023-01863-6) |
-| 25 | MDPI Sustainability — Special Issue: *Biocultural Diversity as a New Emerging Concept for Sustainable Landscape Management* | Open-access collection mapping biocultural diversity in cultural landscapes; good for chunking individual papers | [mdpi.com/sustainability](https://www.mdpi.com/journal/sustainability/special_issues/biocultural_diversity) |
+| 25 | MDPI Sustainability — Special Issue: *Biocultural Diversity as a New Emerging Concept for Sustainable Landscape Management* | Open-access collection mapping biocultural diversity in cultural landscapes; good for chunking individual papers | [mdpi.com/sustainability](https://www.mdpi.com/journal/sustainability/special_issues/biocultural_diversity) |
 
 ---
 
@@ -79,7 +79,7 @@ The sources are likely to contain reports, case studies, policy pages, and ethno
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
-I would use [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2). It is a small models
+I would use [intfloat/multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base). Traditional ecological knowledge corpora routinely contain place names, plant names, and community terminology drawn from indigenous and regional languages, making multilingual embedding support a hard requirement rather than a nice-to-have. The multilingual-e5-base covers 100+ languages, produces 768-dim vectors with stronger domain transfer than MiniLM-class models, and still runs efficiently enough for a research-scale deployment. Its 512-token context window accommodates the longer descriptive passages typical of ethnobotanical and land-use documents.
 
 **Top-k:**
 I will retrieve the top 5 chunks for each query. Five chunks should give the generator enough evidence from multiple sources without adding too much unrelated context. If the answers are too broad or include irrelevant evidence, I will reduce top-k to 3; if answers are missing important context, I will test top-k values of 6-8.
