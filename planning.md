@@ -91,18 +91,13 @@ If this were deployed for real users and I were allowed to choose the embedding 
 
 ## Evaluation Plan
 
-<!-- List your 5 test questions with their expected correct answers.
-     Questions should be specific enough that you can judge whether the system's response
-     is right or wrong. "What are good dining halls?" is too vague.
-     "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
-
-| # | Question | Expected answer |
+ Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | What plant species do [community name] communities use to treat fever, and how is it prepared? | A specific plant name (common + scientific), preparation method (e.g., decoction of bark, poultice of leaves), and the community or region it is attributed to. |
+| 2 | What seasonal indicators do indigenous groups in [region] use to determine when to begin planting? | Specific ecological cues — e.g., flowering of a particular tree, bird migration, lunar cycle — tied to a named community or place. |
+| 3 | How do [community name] land management practices differ between dry and wet seasons? | Distinct practices named for each season (e.g., controlled burns in dry season, rotational fallowing in wet season) with attribution to a source document or community. |
+| 4 | Which animal species are considered sacred or subject to harvest restrictions by communities in [region], and what is the stated reason? | Named species, the nature of the restriction (taboo, seasonal ban, ceremonial use only), and the cultural or ecological rationale given in the source. |
+| 5 | What traditional water management techniques are documented for communities living in [ecosystem type, e.g., arid highlands / river deltas]? | Named techniques (e.g., terrace irrigation, sand dams, flood-retreat agriculture) with geographic and community attribution. |
 
 ---
 
