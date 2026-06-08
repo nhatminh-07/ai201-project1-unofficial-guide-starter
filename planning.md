@@ -107,9 +107,11 @@ If this were deployed for real users and I were allowed to choose the embedding 
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Some documents may be noisy or inconsistent because the sources come from different formats, such as policy pages, academic articles, plant databases, and NGO reports. They may use different names for the same plant, practice, community, or region. This could make retrieval harder if a user asks a question using one term while the document uses another, causing the system to return only partially relevant chunks.
 
-2.
+2. Source attribution and cultural context could be lost if the chunks are not structured carefully. Traditional ecological knowledge is usually tied to a specific community, place, ecosystem, or source document. If the retrieved chunk includes a plant use or climate practice but not the community or location connected to it, the final answer might sound too general or may present place-based knowledge without enough context.
+
+3. Important information may be split across chunk boundaries. For example, one paragraph might introduce the community and region, while the next paragraph explains the forest-management or water-management practice. If only one of those chunks is retrieved, the model may answer with incomplete evidence, weak attribution, or missing details.
 
 ---
 
@@ -120,6 +122,19 @@ If this were deployed for real users and I were allowed to choose the embedding 
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+
+```mermaid
+flowchart TD
+    A[Document Sources<br/>Reports, policy pages, plant databases, articles] --> B[Document Ingestion<br/>Load files, extract text, clean formatting]
+    B --> C[Chunking<br/>Split into 150-250 token chunks<br/>with 30-50 token overlap]
+    C --> D[Embedding + Vector Store<br/>Use the provided starter embedding model<br/>store chunk text and source metadata]
+    E[User Question] --> F[Retrieval<br/>Embed the question and retrieve top 5 chunks]
+    D --> F
+    F --> G[Grounded Generation<br/>Answer only from retrieved chunks<br/>include source attribution]
+    G --> H[Final Response<br/>Concise answer with evidence]
+```
+
+The pipeline starts by collecting source documents and converting them into clean text. The text is split into overlapping chunks so each passage keeps enough context for retrieval. The project uses the embedding model provided by the starter environment, then stores each embedded chunk with metadata such as source title, URL or file path, and topic. When a user asks a question, the system retrieves the top 5 most relevant chunks and passes only that evidence into the generation step, so the final answer stays grounded in the documents.
 
 ---
 
