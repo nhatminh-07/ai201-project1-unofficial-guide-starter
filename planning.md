@@ -52,9 +52,6 @@ Around 30-50 tokens, or roughly 20-40 words.
 
 **Reasoning:**  
 The sources are likely to contain reports, case studies, policy pages, and ethnobotanical descriptions where important ideas are usually grouped by paragraph. A 150-250 token chunk is large enough to preserve one complete idea, such as a plant use, climate adaptation practice, forest-management method, or community example, without mixing too many unrelated topics. A 30-50 token overlap helps prevent key context from being lost when a paragraph boundary splits related information, such as the community name, plant name, location, and practice description.
-How you “get” these values:
-
-Start from the document structure: your
 
 ---
 
