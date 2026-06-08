@@ -9,6 +9,10 @@
 
 ## Domain
 
+Domain: publicly documented traditional ecological knowledge about climate resilience, forest protection, and relationships with useful plants and trees.
+
+This knowledge is valuable because it records practical, place-based ways that communities understand local ecosystems: how people identify useful plants, protect forests, manage seasonal changes, and maintain relationships with land, water, and trees. It is hard to replace because much of it is embodied through lived experience, oral tradition, and long-term observation rather than formal environmental reports. An unofficial guide in this domain could help users find community-centered environmental knowledge that supports climate adaptation and conservation, while avoiding private, sacred, or culturally restricted knowledge.
+
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
 
 ---
@@ -20,16 +24,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | IPBES (Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services) | Global assessments and guidance on indigenous and local knowledge relevant to biodiversity and resilience. | https://ipbes.net/
+| 2 | "Weathering Uncertainty: Traditional Knowledge for Climate Change Assessment and Adaptation" (UNESCO / UNU report) | Compilation of case studies and methods linking traditional knowledge and climate adaptation. | https://unesdoc.unesco.org/ (search title)
+| 3 | FAO — Indigenous Peoples portal | FAO resources on indigenous peoples' roles in sustainable forestry, agroecology, and resilience. | https://www.fao.org/indigenous-peoples/en/
+| 4 | UNFCCC — Local Communities and Indigenous Peoples Platform | UNFCCC platform for knowledge exchange on local and indigenous practices for climate action. | https://unfccc.int/topics/local-communities-and-indigenous-peoples-platform
+| 5 | UN — Declaration on the Rights of Indigenous Peoples (background/resources) | Legal and policy context for working with indigenous knowledge and rights. | https://www.un.org/development/desa/indigenouspeoples/declaration-on-the-rights-of-indigenous-peoples.html
+| 6 | eHRAF World Cultures (Yale) | Ethnographic collections searchable for documented traditional ecological knowledge and plant use. | https://ehrafworldcultures.yale.edu/
+| 7 | JSTOR Plants | Aggregated plant specimen images and literature references useful for linking local plant names to scientific taxa. | https://plants.jstor.org/
+| 8 | PROTA (Plant Resources of Tropical Africa) / PROTA4U | Community and scientific database documenting uses, distribution, and vernacular names of African useful plants. | https://www.prota4u.org/
+| 9 | Ethnobotany Research & Applications (open-access journal) | Peer-reviewed articles documenting local plant knowledge, uses, and conservation. | https://ethnobotanyjournal.org/
+| 10 | The Christensen Fund — Biocultural resources | NGO resources and case studies on biocultural diversity, seed sovereignty, and community knowledge. | https://www.christensenfund.org/
 
 ---
 
@@ -40,11 +44,17 @@
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size:**  
+Around 150-250 tokens, or roughly 120-200 words.
 
-**Overlap:**
+**Overlap:**  
+Around 30-50 tokens, or roughly 20-40 words.
 
-**Reasoning:**
+**Reasoning:**  
+The sources are likely to contain reports, case studies, policy pages, and ethnobotanical descriptions where important ideas are usually grouped by paragraph. A 150-250 token chunk is large enough to preserve one complete idea, such as a plant use, climate adaptation practice, forest-management method, or community example, without mixing too many unrelated topics. A 30-50 token overlap helps prevent key context from being lost when a paragraph boundary splits related information, such as the community name, plant name, location, and practice description.
+How you “get” these values:
+
+Start from the document structure: your
 
 ---
 
