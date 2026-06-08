@@ -64,10 +64,13 @@ The sources are likely to contain reports, case studies, policy pages, and ethno
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
+I would use [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2). It is a small models
 
 **Top-k:**
+I will retrieve the top 5 chunks for each query. Five chunks should give the generator enough evidence from multiple sources without adding too much unrelated context. If the answers are too broad or include irrelevant evidence, I will reduce top-k to 3; if answers are missing important context, I will test top-k values of 6-8.
 
 **Production tradeoff reflection:**
+If this were deployed for real users and I were allowed to choose the embedding model, I would compare models based on accuracy for traditional ecological knowledge, multilingual support, context length, latency, and whether the model can run locally. Multilingual support would matter because source documents may include place names, community names, and plant names from many languages. Higher accuracy and longer context could improve retrieval for domain-specific passages, but may increase cost and response time. For this project, since the embedding model is fixed, I will evaluate retrieval quality through test questions and adjust chunking or top-k instead of changing models.
 
 ---
 
