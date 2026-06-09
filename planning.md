@@ -79,7 +79,7 @@ The sources are likely to contain reports, case studies, policy pages, and ethno
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
-I would use [intfloat/multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base). Traditional ecological knowledge corpora routinely contain place names, plant names, and community terminology drawn from indigenous and regional languages, making multilingual embedding support a hard requirement rather than a nice-to-have. The multilingual-e5-base covers 100+ languages, produces 768-dim vectors with stronger domain transfer than MiniLM-class models, and still runs efficiently enough for a research-scale deployment. Its 512-token context window accommodates the longer descriptive passages typical of ethnobotanical and land-use documents.
+I would use HuggingFace's all-MiniLM-L6-v2 via sentence-transformers. The transformers architecture do generate different chunks of content, it could run without rate limits and it is mostly suitable for main types of projects. The documents are mostly research papers in general, with some parts were seen as documented literature that could be retrieved.
 
 **Top-k:**
 I will retrieve the top 5 chunks for each query. Five chunks should give the generator enough evidence from multiple sources without adding too much unrelated context. If the answers are too broad or include irrelevant evidence, I will reduce top-k to 3; if answers are missing important context, I will test top-k values of 6-8.
